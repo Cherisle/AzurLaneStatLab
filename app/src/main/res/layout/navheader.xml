@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navheader_height"
+    android:background="@drawable/navmenu_bottom_border"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/phonebar_padding"
+    android:paddingRight="@dimen/md_keylines"
+    android:paddingBottom="@dimen/md_keylines"
+    android:paddingLeft="@dimen/md_keylines">
+
+    <ImageView
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:src="@drawable/ic_launcher_foreground" />
+</LinearLayout>

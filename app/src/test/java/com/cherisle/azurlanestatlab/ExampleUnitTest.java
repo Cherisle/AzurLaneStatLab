@@ -1,4 +1,4 @@
-package com.example.azurlanestatlab;
+package com.cherisle.azurlanestatlab;
 
 import org.junit.Test;
 

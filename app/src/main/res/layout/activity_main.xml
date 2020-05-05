@@ -1,18 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/alsl_main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/alsl_navgraph" />
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navheader"
+        app:menu="@menu/alsl_menu_navigation"
+        app:itemBackground="@drawable/navdrawer_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="15dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/app_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="v."/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/fragmentDirectory"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/fragmentAdmin"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/fragmentNodes"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/fragmentNodeDetails"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+    <!--<View-->
+    <!--android:id="@+id/shadowView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#F2808080"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--android:id="@+id/floating_action_menu_button"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginBottom="@dimen/activity_vertical_margin"-->
+    <!--app:backgroundTint="@color/light_grey"/>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/fab_action1_label"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/rounded_corners"-->
+    <!--android:text="Reset Node"-->
+    <!--android:textSize="18sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textAlignment="center"-->
+    <!--android:visibility="invisible"-->
+    <!--android:gravity="top|left"-->
+    <!--android:paddingLeft="1dp"-->
+    <!--android:paddingRight="1dp"/>-->
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--android:id="@+id/fab_action1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginBottom="100dp"-->
+    <!--android:src="@drawable/ic_baseline_360_24px"-->
+    <!--android:visibility="invisible"-->
+    <!--app:backgroundTint="@color/white"/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--android:id="@+id/fab_action2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginBottom="184dp"-->
+    <!--android:src="@drawable/ic_add_24px"-->
+    <!--android:visibility="invisible"-->
+    <!--app:backgroundTint="@color/white"/>-->
+
+    <!--<com.google.android.material.navigation.NavigationView-->
+    <!--android:id="@+id/nav_view"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="start"-->
+    <!--android:fitsSystemWindows="true"-->
+    <!--app:headerLayout="@layout/navheader"-->
+    <!--app:menu="@menu/menu_navigation"-->
+    <!--app:itemIconTint="@color/drawer_item"-->
+    <!--app:itemTextColor="@color/drawer_item"-->
+    <!--app:itemBackground="@drawable/drawer_bg"-->
+    <!--app:itemTextAppearance="@style/RobotoTextViewStyle">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Powered by Edyza Inc."/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</com.google.android.material.navigation.NavigationView>-->
+
+</androidx.drawerlayout.widget.DrawerLayout>

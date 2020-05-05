@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <group
+        android:id="@+id/group_1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+            <!--android:icon="@drawable/ic_baseline_home_24px"
+            android:background="@color/menuActiveBgColor"
+            android:tint="@color/medium_grey"-->
+        <!--<item
+            android:id="@+id/nav_nodes"
+            android:icon="@drawable/ic_baseline_settings_input_component_24px"
+            android:tint="@color/medium_grey"
+            android:title="Nodes" />-->
+    </group>
+</menu>

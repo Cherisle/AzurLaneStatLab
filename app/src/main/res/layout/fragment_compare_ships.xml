@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ship_card_bg">
+
+    <LinearLayout
+        android:id="@+id/frag_compareships_ll_vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".CompareShipsFragment"
+        android:background="@color/ship_card_bg">
+
+        <LinearLayout
+            android:id="@+id/frag_compareships_ll_horizontal"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search Ship By Name:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+
+            <AutoCompleteTextView
+                android:id="@+id/et_autocomplete_ship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:imeOptions="actionSearch"
+                android:inputType="textAutoComplete|textAutoCorrect"
+                android:textColor="@color/black" >
+
+                <requestFocus />
+            </AutoCompleteTextView>
+
+            <!--<com.anychart.AnyChartView-->
+            <!--android:id="@+id/any_chart_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
+
+            <!--<ProgressBar-->
+            <!--android:id="@+id/progress_bar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ships_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/md_keylines"
+            android:paddingTop="@dimen/md_keylines"
+            android:scrollbars="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </LinearLayout>
+
+
+
+</ScrollView>
